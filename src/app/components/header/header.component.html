@@ -1,0 +1,6 @@
+<div *ngIf="latestUSD && latestEUR; else loading">
+  <p>1 USD = {{latestUSD.rates.UAH.toFixed(2)}} UAH</p>
+  <p>1 EUR = {{latestEUR.rates.UAH.toFixed(2)}} UAH</p>
+</div>
+
+<ng-template #loading>Loading...</ng-template>

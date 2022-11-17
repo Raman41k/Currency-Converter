@@ -1,0 +1,17 @@
+<div class="wrapper" (change)="calc()">
+    <input type="number" [(ngModel)]="amount" (change)="calc()" (ngModelChange)="calc()">
+    <select [(ngModel)]="selectedFrom">
+      <option selected>USD</option>
+      <option>UAH</option>
+      <option>EUR</option>
+    </select>
+    <select [(ngModel)]="selectedTo">
+      <option selected>USD</option>
+      <option>UAH</option>
+      <option>EUR</option>
+    </select>
+</div>
+
+<div *ngIf="result">
+  Result: <span>{{result.result.toFixed(2)}}</span>
+</div>
