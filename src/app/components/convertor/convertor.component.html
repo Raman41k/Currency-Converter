@@ -1,17 +1,28 @@
 <div class="wrapper" (change)="calc()">
-    <input type="number" [(ngModel)]="amount" (change)="calc()" (ngModelChange)="calc()">
-    <select [(ngModel)]="selectedFrom">
-      <option selected>USD</option>
-      <option>UAH</option>
-      <option>EUR</option>
-    </select>
-    <select [(ngModel)]="selectedTo">
-      <option selected>USD</option>
-      <option>UAH</option>
-      <option>EUR</option>
-    </select>
+
+  <h2 class="title">Convertor</h2>
+
+  <input class="input" type="number" [(ngModel)]="amount" (ngModelChange)="calc()" placeholder="Enter amount">
+
+  <select class="select" [(ngModel)]="selectedFrom">
+    <option selected>USD</option>
+    <option>UAH</option>
+    <option>EUR</option>
+    <option>PLN</option>
+  </select>
+
+  <select class="select" [(ngModel)]="selectedTo">
+    <option selected>USD</option>
+    <option>UAH</option>
+    <option>EUR</option>
+    <option>PLN</option>
+  </select>
+
+  <div *ngIf="result;else waiting">
+    <div>
+     <span>{{amount}} {{selectedFrom}} = </span> <span>{{result.result.toFixed(2)}} {{selectedTo}}</span>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="result">
-  Result: <span>{{result.result.toFixed(2)}}</span>
-</div>
+<ng-template #waiting>Enter amount...</ng-template>

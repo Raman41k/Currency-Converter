@@ -10,12 +10,13 @@ import {IConvertor} from "../../interfaces";
 export class ConvertorComponent implements OnInit {
   selectedFrom: string = 'USD';
   selectedTo: string = 'UAH';
-  amount = 1;
+  amount: number;
   result: IConvertor;
 
   constructor(private mainService:MainService) { }
 
   ngOnInit(): void {
+
   }
 
   calc() {
@@ -24,7 +25,5 @@ export class ConvertorComponent implements OnInit {
         this.result = value;
       })
     }
-
-
   }
 }

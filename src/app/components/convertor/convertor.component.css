@@ -1,4 +1,44 @@
-.wrapper{
-  width: 90%;
-  margin: 0 auto;
+.wrapper {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  margin-bottom: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input {
+  width: 25%;
+  border:none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.input:focus {
+  outline:none!important;
+}
+
+.select{
+  width: 25%;
+  border: none;
+  margin-bottom: 10px;
+  text-align: center;
+  background: brown;
+  color: white;
+  appearance: none;
+  padding: 15px;
+  box-sizing: border-box;
 }

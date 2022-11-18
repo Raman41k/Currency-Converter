@@ -1,6 +1,9 @@
-<div *ngIf="latestUSD && latestEUR; else loading">
-  <p>1 USD = {{latestUSD.rates.UAH.toFixed(2)}} UAH</p>
-  <p>1 EUR = {{latestEUR.rates.UAH.toFixed(2)}} UAH</p>
+<div *ngIf="latestUSD && latestEUR; else loading" class="wrapper">
+  <div class="container">
+    <div class="currency"><img class="icon" src="assets/img/usd.svg" alt="Usd Icon"> <span class="cur">{{latestUSD.rates.UAH.toFixed(2)}} UAH</span></div>
+    <div class="currency"><img class="icon" src="assets/img/euro.svg" alt="Usd Icon"> <span class="cur">{{latestEUR.rates.UAH.toFixed(2)}} UAH</span></div>
+  </div>
+
 </div>
 
 <ng-template #loading>Loading...</ng-template>
